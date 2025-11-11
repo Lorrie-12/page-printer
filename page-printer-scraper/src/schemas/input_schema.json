@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PagePrinterInput",
+  "type": "object",
+  "description": "Configuration for Page Printer capture jobs.",
+  "properties": {
+    "jobs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["url"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Target webpage URL to capture."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["pdf", "screenshot"],
+            "default": "pdf",
+            "description": "Capture type: full-page PDF or screenshot image."
+          },
+          "outputDir": {
+            "type": "string",
+            "description": "Directory (relative to project root) where the captured file will be stored."
+          },
+          "fileName": {
+            "type": "string",
+            "description": "Base file name (without extension). If omitted, a name is derived from the URL."
+          },
+          "timeout": {
+            "type": "integer",
+            "minimum": 1000,
+            "description": "Navigation timeout in milliseconds."
+          },
+          "pdfFormat": {
+            "type": "string",
+            "description": "PDF page format (e.g., A4, Letter). Used only when type is pdf."
+          },
+          "pdfMargin": {
+            "type": "object",
+            "description": "Optional PDF margins in CSS units.",
+            "properties": {
+              "top": { "type": "string" },
+              "right": { "type": "string" },
+              "bottom": { "type": "string" },
+              "left": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "pre": {
+            "type": "object",
+            "description": "Pre-function configuration executed before capture.",
+            "properties": {
+              "action": {
+                "type": "string",
+                "enum": [
+                  "waitForSelectorVisibility",
+                  "click",
+                  "wait",
+                  "customScript"
+                ]
+              },
+              "selector": {
+                "type": "string",
+                "description": "CSS selector used by some pre-actions."
+              },
+              "timeout": {
+                "type": "integer",
+                "minimum": 1000,
+                "description": "Timeout used by some pre-actions in milliseconds."
+              },
+              "waitAfterClickMs": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Delay after click in milliseconds."
+              },
+              "waitMs": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Delay in milliseconds used by 'wait' action."
+              },
+              "script": {
+                "type": "string",
+                "description": "Arbitrary JavaScript code for the 'customScript' action."
+              }
+            },
+            "additionalProperties": true
+          },
+          "notes": {
+            "type": "object",
+            "description": "Optional static metadata appended to the resulting notes object.",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["jobs"],
+  "additionalProperties": false
+}
