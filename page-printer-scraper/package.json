@@ -1,0 +1,50 @@
+{
+  "name": "page-printer-scraper",
+  "version": "1.0.0",
+  "description": "Capture web pages as full-page screenshots or high-quality PDFs using Playwright.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "capture": "node src/main.js",
+    "lint": "echo \"No linter configured\"",
+    "test": "echo \"No tests defined\" && exit 0",
+    "postinstall": "npx playwright install chromium"
+  },
+  "keywords": [
+    "playwright",
+    "screenshot",
+    "pdf",
+    "automation",
+    "scraper",
+    "page-printer"
+  ],
+  "author": "Bitbash",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "playwright": "^1.47.0"
+  }
+}
+
+page-printer-scraper/LICENSE
+textMIT License
+
+Copyright (c) 2025 Bitbash
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
