@@ -1,0 +1,36 @@
+{
+  "jobs": [
+    {
+      "url": "https://example.com/",
+      "type": "pdf",
+      "outputDir": "captures/example",
+      "fileName": "example_home_pdf",
+      "timeout": 30000,
+      "pdfFormat": "A4",
+      "pre": {
+        "action": "waitForSelectorVisibility",
+        "selector": "body",
+        "timeout": 15000
+      },
+      "notes": {
+        "environment": "sample",
+        "capturePurpose": "homepage layout"
+      }
+    },
+    {
+      "url": "https://example.com/",
+      "type": "screenshot",
+      "outputDir": "captures/example",
+      "fileName": "example_home_screenshot",
+      "timeout": 30000,
+      "pre": {
+        "action": "wait",
+        "waitMs": 3000
+      },
+      "notes": {
+        "environment": "sample",
+        "capturePurpose": "homepage screenshot"
+      }
+    }
+  ]
+}
