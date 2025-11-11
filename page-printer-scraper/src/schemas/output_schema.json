@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PagePrinterOutput",
+  "type": "array",
+  "description": "Output metadata for each captured page.",
+  "items": {
+    "type": "object",
+    "required": ["url", "notes"],
+    "properties": {
+      "url": {
+        "type": "string",
+        "format": "uri",
+        "description": "The target webpage URL that was captured."
+      },
+      "fileUrl": {
+        "type": ["string", "null"],
+        "description": "The saved file path or public URL."
+      },
+      "fileKey": {
+        "type": ["string", "null"],
+        "description": "Unique identifier of the saved file (usually the filename)."
+      },
+      "notes": {
+        "type": "object",
+        "description": "Object containing custom attributes such as visibility checks or page states.",
+        "additionalProperties": true
+      }
+    },
+    "additionalProperties": false
+  }
+}
