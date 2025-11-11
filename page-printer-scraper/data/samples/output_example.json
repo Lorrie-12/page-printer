@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://example.com/page1",
+    "fileUrl": "captures/page1.pdf",
+    "fileKey": "page1.pdf",
+    "notes": {
+      "isElementVisible": true
+    }
+  },
+  {
+    "url": "https://example.com/page2",
+    "fileUrl": "captures/page2.pdf",
+    "fileKey": "page2.pdf",
+    "notes": {
+      "isElementVisible": false
+    }
+  }
+]
